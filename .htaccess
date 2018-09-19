@@ -1,0 +1,17 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+#ErrorDocument 404 /APPLICATION/404.php
+ErrorDocument 404 '   <title>DAY2DAYHomeExperts | 404 Page</title> <link rel="stylesheet" href="assets/css/animate.css"><link rel="stylesheet" href="assets/css/stylesheet.css"><body><div id="preloader"><noscript>JavaScript is off. Please enable to view full site.</noscript></div><div id="container" class="wrapper"><section id="page"><div id="text-holder"><img src="images/logo.png" alt="" /><br/><h1>404 ERROR! <br/>Oops, Page NOT FOUND</h1><p>We looked everywhere but we could not locate it!!</p><p>Actually, the page you are looking for does not exist!</p><a class="le-btn" href="javascript:history.back()">Return Home!</a><span class="sep"></span><div class="form-holder inline"></div></div><div id="ufo"><img src="images/logo.png" alt="logo" /></div></section></div><a class="goto-top" href="#gotop"></a><script type="text/javascript" src="js/selector.js"></script><script type="text/javascript" src="js/fontsmoothie.min.js"></script><script src="js/jquery-1.12.4.min.js"></script><script src="js/jquery-migrate-1.4.1.min.js"></script><script type="text/javascript" src="js/prefixfree.min.js"></script><script type="text/javascript" src="js/pace.min.js"></script><script type="text/javascript" src="js/plax.js"></script><script type="text/javascript" src="js/wow.min.js"></script><script type="text/javascript" src="js/script.js"></script>    </body>'
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+#RewriteRule ^([a-z]+)\/?$ $1.php [NC]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html
+#RewriteRule ^([a-z]+)\/?$ $1.html [NC]
+
+</IfModule>
